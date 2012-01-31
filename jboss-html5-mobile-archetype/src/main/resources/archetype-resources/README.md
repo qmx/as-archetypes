@@ -43,6 +43,8 @@ With the prerequisites out of the way, you're ready to build and deploy.
 
 Deploying the application
 -------------------------
+
+### Deploying locally
  
 First you need to start the JBoss container. To do this, run
   
@@ -78,6 +80,10 @@ To undeploy run this command:
 
 You can also start the JBoss container and deploy the project using JBoss Tools. See the
 Getting Started Guide for Developers for more information.
+
+### Deploying to OpenShift
+
+You can also deploy the application directly to OpenShift, Red Hat's cloud based PaaS offering, follow the instructions [here](https://community.jboss.org/wiki/DeployingHTML5ApplicationsToOpenshift)
  
 Running the Arquillian tests
 ============================
