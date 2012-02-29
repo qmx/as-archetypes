@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ${groupId}.html5_mobile.rest;
+package ${packageName}.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ${groupId}.html5_mobile.rest;
+package ${packageName}.rest;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -44,7 +44,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import ${groupId}.html5_mobile.model.Member;
+import ${packageName}.model.Member;
 
 /**
  * JAX-RS Example

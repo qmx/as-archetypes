@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ${groupId}.html5_mobile.test;
+package ${packageName}.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -37,9 +37,9 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import ${groupId}.html5_mobile.rest.MemberService;
-import ${groupId}.html5_mobile.model.Member;
-import ${groupId}.html5_mobile.util.Resources;
+import ${packageName}.rest.MemberService;
+import ${packageName}.model.Member;
+import ${packageName}.util.Resources;
 
 /**
  * Uses Arquilian to test the JAX-RS processing class for member registration.

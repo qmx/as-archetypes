@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ${groupId}.html5_mobile.util;
+package ${packageName}.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
