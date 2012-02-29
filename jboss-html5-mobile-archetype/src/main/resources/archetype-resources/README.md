@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 ${artifactId}: Example AeroGear Application Using Multiple HTML5, Mobile & JAX-RS Technologies
 =========================================================================================================
 Author: Jay Balunas
@@ -49,22 +52,22 @@ With the prerequisites out of the way, you're ready to build and deploy.
 Deploying the application
 -------------------------
 
-### Deploying locally
+${symbol_pound}${symbol_pound}${symbol_pound} Deploying locally
  
 First you need to start the JBoss container. To do this, run
   
-    $JBOSS_HOME/bin/standalone.sh
+    ${symbol_dollar}JBOSS_HOME/bin/standalone.sh
   
 or if you are using windows
  
-    $JBOSS_HOME/bin/standalone.bat
+    ${symbol_dollar}JBOSS_HOME/bin/standalone.bat
     
 Note: Adding "-b 0.0.0.0" to the above commands will allow external clients (phones, tablets, 
 desktops, etc...) connect through your local network.
       
 For example
 
-    $JBOSS_HOME/bin/standalone.sh -b 0.0.0.0 
+    ${symbol_dollar}JBOSS_HOME/bin/standalone.sh -b 0.0.0.0
 
 To deploy the application, you first need to produce the archive to deploy using
 the following Maven goal:
@@ -88,7 +91,7 @@ You can also start the JBoss container and deploy the project using JBoss Tools.
 <a href="https://docs.jboss.org/author/display/AS71/Getting+Started+Developing+Applications+Guide" title="Getting Started Developing Applications Guide">Getting Started Developing Applications Guide</a> 
 for more information.
 
-### Deploying to OpenShift
+${symbol_pound}${symbol_pound}${symbol_pound} Deploying to OpenShift
 
 You can also deploy the application directly to OpenShift, Red Hat's cloud based PaaS offering, follow the instructions [here](https://community.jboss.org/wiki/DeployingHTML5ApplicationsToOpenshift)
 
