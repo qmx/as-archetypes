@@ -110,6 +110,7 @@
             <build>
                 <pluginManagement>
                     <plugins>
+                        <!-- When using Eclipse, make sure m2e-wro4j is installed. You can install it from http://download.jboss.org/jbosstools/builds/staging/m2e-wro4j/all/repo/ -->
                         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
                         <plugin>
                             <groupId>org.eclipse.m2e</groupId>
