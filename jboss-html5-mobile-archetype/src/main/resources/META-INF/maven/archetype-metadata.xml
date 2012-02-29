@@ -16,13 +16,13 @@
         </requiredProperty>
     </requiredProperties>
     <fileSets>
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet encoding="UTF-8">
             <directory>src/etc</directory>
             <includes>
                 <include>**/*.txt</include>
             </includes>
         </fileSet>
-        <fileSet encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
             <directory></directory>
             <includes>
                 <include>.gitignore</include>
