@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -21,11 +24,11 @@ Restful calls, validates return values, and populates the member table.
 
 /* Get the member template */
 function getMemberTemplate() {
-	$.ajax({
+    ${symbol_dollar}.ajax({
         url: "tmpl/member.tmpl",
         dataType: "html",
         success: function( data ) {
-            $( "head" ).append( data );
+            ${symbol_dollar}( "head" ).append( data );
             updateMemberTable();
         }
     });
@@ -33,16 +36,16 @@ function getMemberTemplate() {
 
 /* Builds the updated table for the member list */
 function buildMemberRows(members) {
-	return _.template( $( "#member-tmpl" ).html(), {"members": members});
+	return _.template( ${symbol_dollar}( "${symbol_pound}member-tmpl" ).html(), {"members": members});
 }
 
 /* Uses JAX-RS GET to retrieve current member list */
 function updateMemberTable() {
-   $.ajax({
-	   url: "/jboss-as-kitchensink-html5-mobile-services/rest/members/json",
+    ${symbol_dollar}.ajax({
+	   url: "/${parentArtifactId}-services/rest/members/json",
 	   cache: false,
 	   success: function(data) {
-            $('#members').empty().append(buildMemberRows(data));
+	       ${symbol_dollar}('${symbol_pound}members').empty().append(buildMemberRows(data));
        },
        error: function(error) {
             //console.log("error updating table -" + error.status);
@@ -57,33 +60,33 @@ the validation errors.
  */
 function registerMember(formValues) {
    //clear existing  msgs
-   $('span.invalid').remove();
-   $('span.success').remove();
+    ${symbol_dollar}('span.invalid').remove();
+    ${symbol_dollar}('span.success').remove();
 
-   $.post('/jboss-as-kitchensink-html5-mobile-services/rest/members', formValues,
+    ${symbol_dollar}.post('/${parentArtifactId}-services/rest/members', formValues,
          function(data) {
             //console.log("Member registered");
 
             //clear input fields
-            $('#reg')[0].reset();
+            ${symbol_dollar}('${symbol_pound}reg')[0].reset();
 
             //mark success on the registration form
-            $('#formMsgs').append($('<span class="success">Member Registered</span>'));
+            ${symbol_dollar}('${symbol_pound}formMsgs').append(${symbol_dollar}('<span class="success">Member Registered</span>'));
 
             updateMemberTable();
          }).error(function(error) {
             if ((error.status == 409) || (error.status == 400)) {
                //console.log("Validation error registering user!");
 
-               var errorMsg = $.parseJSON(error.responseText);
+               var errorMsg = ${symbol_dollar}.parseJSON(error.responseText);
 
-               $.each(errorMsg, function(index, val){
-                  $('<span class="invalid">' + val + '</span>')
-                        .insertAfter($('#' + index));
+               ${symbol_dollar}.each(errorMsg, function(index, val){
+                   ${symbol_dollar}('<span class="invalid">' + val + '</span>')
+                        .insertAfter(${symbol_dollar}('${symbol_pound}' + index));
                });
             } else {
                //console.log("error - unknown server issue");
-               $('#formMsgs').append($('<span class="invalid">Unknown server error</span>'));
+                ${symbol_dollar}('${symbol_pound}formMsgs').append(${symbol_dollar}('<span class="invalid">Unknown server error</span>'));
             }
          });
 }

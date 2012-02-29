@@ -1,16 +1,19 @@
-kitchensink-html5-mobile: JAX-RS Services Documentation 
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+${artifactId}: JAX-RS Services Documentation 
 =======================================================
 Author: Jay Balunas
 
 This example supports various RESTFul end points which also includes JSONP support for cross domain requests.
 
-By default the base URL for services is `/jboss-as-kitchensink-html5-mobile-services`.  This can be changed by adjusting the default context path for the services module.
+By default the base URL for services is `/${artifactId}`.  This can be changed by adjusting the default context path for the services module.
 
 MemberService End Points
 ------------------------
 
-### List all members
-#### /rest/members
+${symbol_pound}${symbol_pound}${symbol_pound} List all members
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} /rest/members
 
 * Request type: GET
 * Return type: XML
@@ -34,7 +37,7 @@ MemberService End Points
 </collection>
 ```
 
-#### /rest/members/json
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} /rest/members/json
 
 * Request type: GET
 * Return type: JSON
@@ -44,9 +47,9 @@ MemberService End Points
 [{"id":1,"name":"Jane Smith","email":"jane.smith@mailinator.com","phoneNumber":"2125551212"},{"id":0,"name":"John Smith","email":"john.smith@mailinator.com","phoneNumber":"2125551212"}]
 ```
 
-### Create a new members
+${symbol_pound}${symbol_pound}${symbol_pound} Create a new members
 
-#### /rest/members
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} /rest/members
 
 * Request type: POST
 * Request type: application/x-www-form-urlencoded
@@ -60,16 +63,16 @@ MemberService End Points
 {"phoneNumber":"10-12 Numbers","email":"Invalid format"}
 ```
 
-#### /rest/members/new?name=&email=&phoneNumber=
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} /rest/members/new?name=&email=&phoneNumber=
 * Request type: GET
 * Query parameters: name, email, phoneNumber
 * Return type: JSON
 * Response example: See POST example above
  * Note: JSONP requests do not support error responses
 
-### Get one member by ID
+${symbol_pound}${symbol_pound}${symbol_pound} Get one member by ID
 
-#### /rest/members/\<id>
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} /rest/members/\<id>
 * Request type: GET
 * Return type: XML
 * Response example:
@@ -84,7 +87,7 @@ MemberService End Points
 </member>
 ```
 
-#### /rest/members/\<id>/json
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} /rest/members/\<id>/json
 * Request type: GET
 * Return type: JSON
 * Response example:
@@ -107,7 +110,7 @@ In order for a request to be padded the following things must be true:
 
 For example:
 
-  http://\<domain:port>/jboss-as-kitchensink-html5-mobile-services/rest/members/json?jsonpcallback=mycallback
+  http://\<domain:port>/${artifactId}/rest/members/json?jsonpcallback=mycallback
   
 See jQuery's documentation for client access examples:
 

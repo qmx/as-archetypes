@@ -57,7 +57,7 @@
             complete: function() {
                 if ( !window.jQuery ) {
                     //In production, you would want to fall back to a minified file.
-                    //We fall back to the full version because Eclipse reports ${enterprise} errors in some minified JavaScript files.
+                    //We fall back to the full version because Eclipse reports false errors in some minified JavaScript files.
                     yepnope.load( "js/libs/jquery-1.6.4.js" );
                 }
             }
@@ -208,7 +208,7 @@
                     <p class="desktop-only">Enforces client side validation with HTML5 based constraints that match the annotation-based constraints defined on the model class. Also uses new HTML5 attributes such as placeholder, and autofocus.</p>
 
                     <!-- For now mapping bean validation constraints from server side model is a manual task -->
-                    <form name="reg" id="reg" data-ajax="${enterprise}">
+                    <form name="reg" id="reg" data-ajax="false">
                         <fieldset>
                             <legend>Register a user:</legend>
                             <div>

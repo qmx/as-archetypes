@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /*
  * JBoss, Home of Professional Open Source
  * Copyright 2012, Red Hat, Inc., and individual contributors
@@ -27,7 +30,7 @@ test('Build 2 Member Rows', function() {
 
     var html = buildMemberRows(members);
 
-    ok($(html).length == 2, 'Number of rows built: ' + length);
+    ok(${symbol_dollar}(html).length == 2, 'Number of rows built: ' + length);
 });
 
 test('Build 0 member Rows', function() {
@@ -37,7 +40,7 @@ test('Build 0 member Rows', function() {
 
     var html = buildMemberRows(members);
 
-    ok($(html).length == 0, 'Created no rows for empty members');
+    ok(${symbol_dollar}(html).length == 0, 'Created no rows for empty members');
 });
 
 module('Member Restful Calls');
@@ -45,12 +48,12 @@ module('Member Restful Calls');
 asyncTest('Request current member list', function() {
     expect(1);
 
-    $.ajax({
-        url: "http://localhost:8080/jboss-as-kitchensink-html5-mobile-services/rest/members/json",
+    ${symbol_dollar}.ajax({
+        url: "http://localhost:8080/${parentArtifactId}-services/rest/members/json",
         dataType: "jsonp",
         jsonp: "jsonpcallback",
         success: function(data) {
-            ok($(data).length, "Initial member returned");
+            ok(${symbol_dollar}(data).length, "Initial member returned");
             start();
         }
     });
